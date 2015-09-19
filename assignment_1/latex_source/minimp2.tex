@@ -1,0 +1,46 @@
+\section*{Mini Machine Problem 2 (15 points)}
+
+This mini-MP asks you to play around with a few basic functionalities of Pentaho Kettle (Spoon) software to do data preprocessing for a customer table. In particular, you need to build a simple workflow that outputs pairs of last names that look similar. They currently belong to different customers, possibly because of mistakes of the employees when inputting the data.\\
+
+\textbf{Purpose} 
+\begin{itemize}
+\item Know how a tool specifically designed for data preprocessing may look like.
+\item Consider using the open-source software in your future work.
+\end{itemize}
+
+\textbf{Requirements} 
+\begin{itemize}
+\item Do a few basic tasks with Spoon. You will have to install the software on your machine. In particular, you may want to watch Long's demonstration on the usage of Kettle Spoon in the video lecture on 09/08/2015. It shows basic things about Spoon, and you only need to combine and modify those things to finish this assignment.
+\end{itemize}
+
+You can download the software ($\approx800$ MB) at \url{http://community.pentaho.com/projects/data-integration/}, and the tutorial about how to launch it at \url{http://wiki.pentaho.com/display/EAI/02.+Spoon+Introduction}.
+
+As we will need MySQL, you need to copy 
+\texttt{mysql-connector-java-5.1.36-bin.jar} to the \texttt{lib} folder of your kettle installation folder: \url{http://dev.mysql.com/downloads/connector/j/}
+
+We will use \texttt{Sakila} sample database from MySQL.  We are particularly interested in the \texttt{Customer} table. We uploaded it to our database, so you can use the database online, which means you do not need to install MySQL server. You do not need knowledge of MySQL to do this mini MP either.
+
+To get started, open file \texttt{cs412\_minimp1.ktr} in Spoon. You can find the file in the \texttt{data.zip} file on the assignment page of the course website. After opening it, you will see the following components:
+\begin{itemize}
+\item \texttt{ReadSource}: It downloads the table \texttt{Customers} from our online database. If you double click on the component, you will see it contains a SQL query to obtain the necessary information. The component is incomplete because it does not specify the connection. You will have to create a new one by clicking on ``New...'', and then enter the following information: 
+\begin{itemize}
+\item Host name: engr-cpanel-mysql.engr.illinois.edu
+\item Database name: ltpham3\_sakila
+\item Port number: 3306
+\item Username: ltpham3\_cs412
+\item Password: cs412kevin
+\end{itemize}
+You can test the connection by clicking on ``Test'', or clicking on ``Preview'' after double clicking on the icon of the component.
+\item \texttt{Lkp\_Lastname}: It downloads a list of last name. You also need to specify the connection you created for the component above.
+\item \texttt{MatchLastName}: It compares the last names from \texttt{Lkp\_Lastname} with the last names from \texttt{ReadSource}. You feel free to choose one of the built-in algorithms for the comparison. 
+\end{itemize}
+
+Your tasks are as followed:
+
+\begin{enumerate}
+\item[1.] (5') Your first task is to make \texttt{MatchLastName} works by specifying the flow of data from \texttt{ReadSource} to \texttt{Lkp\_LastName}, as well as filling in necessary information in the component. We specified the flow of data from \texttt{ReadSource} to \texttt{MatchLastName} as an example. You will also notice that we specified the min value 0.8 and max value 0.99 in \texttt{MatchLastName}. Can you explain why the max value must be 0.99 rather than 1.0? You may try with max value 1.00 to see why we must do that.\\
+
+\item[2.] (5') Search for ``Filter Rows'' component in the Design tab on the left, and drag it to the canvas. It helps you input rows from \texttt{MatchLastName} and output rows that satisfy your criteria. Specify the filter with necessary criteria so that it will output the rows containing information about the customers who  have last names matching with those of someone else. Report the screenshots of the workflow and its output.\\
+
+\item[3.] (5') The \texttt{score} column in the output above seems to be redundant. Search for component ``Select values'' in the \texttt{Design} tab on the left, and fill in necessary information to remove the \texttt{score} column. Report the screenshots of the workflow and its output.
+\end{enumerate}

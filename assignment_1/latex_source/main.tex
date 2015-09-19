@@ -1,0 +1,165 @@
+\input{cs412.tex}
+
+%\documentclass{article}
+\usepackage{amsmath}
+\setlength{\parindent}{0pt}
+\usepackage{graphicx}
+%\usepackage{fullpage}
+%\usepackage{setspace} 
+\usepackage{float}
+%\usepackage{listings} 
+%\usepackage{bbm}
+\usepackage{bigstrut}
+%\usepackage{caption}
+%\usepackage{subcaption}
+%\usepackage{algpseudocode}
+%\usepackage{algorithm}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true}
+\usepackage{color}
+
+%\newcommand{\ans}[1]{{[{\sc Answer:} {\sf #1}]}}
+\newcommand{\ans}[1]{}
+
+\begin{document}
+
+
+\solution{}{Due: 09/21/2015 11:59pm}{Assignment 1}{Fall 2015}
+% Fill in the above, for example, as follows:
+% \solution{Joe Smith}{\today}{1}{Fall 2012}
+
+\pagestyle{myheadings}  % Leave this command alone
+
+\paragraph*{General Instruction}
+\begin{itemize}
+\setlength{\itemsep}{2pt}
+\item Errata: After the assignment is released, any further corrections of errors or clarifications will be posted at \href{https://piazza.com/class/idqujg4tiae3q0?cid=26}{the Errata page at Piazza}. Please watch it.
+\item Feel free to talk to other members of the class in doing the homework. We are more concerned that
+you learn how to solve the problem than that you demonstrate that you solved it entirely on your
+own. You should, however, write down the solution yourself. 
+\item Try to keep the solution brief
+and clear. 
+\item Please use Piazza first if you have questions about the homework. Also feel free to send us e-mails and come to office hours. 
+\item For each question, you will \textbf{NOT} get full credit if you only give out a final result. Necessary calculation steps and reasoning are required. 
+
+\end{itemize}
+
+\paragraph*{Assignment Submission}
+\begin{itemize}
+\setlength{\itemsep}{2pt}
+\item Please submit your work before the due time. \textbf{We do NOT accept late homework!}
+\item {We will be using Compass for collecting the homework assignments}. Please submit your answers via Compass (\url{http://compass2g.illinois.edu}). Please do NOT hand in a hard copy of your write-up. Contact the TAs if you are having technical difficulties in submitting the assignment.
+\item \textcolor{red}{The homework \textbf{MUST} be submitted in \textbf{pdf} format}. \textbf{Scanned handwritten and hand-drawn pictures} inside your documents \textbf{are not acceptable}. Answers to the written part and mini-MP should be included in one \texttt{.pdf}  file.
+\item Please \textbf{DO NOT} zip the PDF file so that graders can access your PDF directly on Compass.  You can compress other files into a single zip file. In summary, you need to submit one PDF file, named as \texttt{hw1.netid.pdf}, and one \texttt{.zip} file, named as \texttt{hw1.netid.zip}.
+\item If scripts are used to solve problems, you are required to submit the source code, and use the file names to identify the corresponding questions or sub-questions. For instance, \texttt{question1.netid.py} refers to the python source code for Question 1; and \texttt{question1a.netid.py} refers to the python source code for sub-question 1(a); replace \texttt{netid} with your netid. You can submit separate files for sub-questions or a single file for the entire question. 
+
+\end{itemize}
+
+%\paragraph*{Dataset}
+%\begin{itemize}
+%\item The data for Q2 can be download from compass2g or \href{http://goo.gl/0l4XkG}{the link}.    
+%\end{itemize}
+
+\paragraph*{Dataset}
+\begin{itemize}
+\item The data set file, data.zip, can found in  \href{https://wiki.cites.illinois.edu/wiki/display/cs412fa15/Assignments}{the course website}.    
+\end{itemize}
+
+\pagebreak
+
+\input{mingkun}
+
+\section*{Question 3 (10 points)}
+Based on the data of students' scores (file \texttt{data.online.scores}, contained in the file \texttt{data.zip}), normalize the mid-term scores using z-score normalization (use \textbf{empirical standard deviation} for standard deviation).\\
+
+\textbf{Purpose} 
+\begin{itemize}
+\item Understand the intuition and usage of z-score normalization.
+\end{itemize}
+
+\textbf{Requirements}
+\begin{itemize}
+\item Write a script to normalize the data using z-score normalization, in any language of your choice. You need to include the script file in your submission.
+\end{itemize}
+
+\begin{itemize}
+\item[a.] (5') Compare the mean and empirical variance before and after normalization.
+\item[b.] (5') For original score of $90$, what is the corresponding score after normalization?
+\end{itemize}
+
+\section*{Question 4 (30 points)}
+\textbf{Purpose}
+\begin{itemize}
+\item Understand the intuition and usage of Pearson correlation coefficients and Principal Component Analysis (PCA).
+\end{itemize}
+
+\textbf{Requirement}
+\begin{itemize}
+\item Apply the algorithms described in the lecture slides on a toy dataset
+\item Give explanations based on your understanding of the algorithms
+\item Use Matlab, MS Excel, or similar software applications for calculation and visualization.
+\end{itemize}
+
+Consider 10 data points in 2-D space as specified in the table below. 
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|} \hline
+ $X$ & 0.69 & -1.31 & 0.39 & 0.05 & 1.29 & 0.49 & 0.19 & -0.81 & -0.31 & 0.71  \\ \hline 
+ $Y$ & 0.89 & -1.11 & 0.59 & 0.45 & 1.19 & 0.69 & 0.25 & -0.71 & -0.21 & 0.71  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\begin{enumerate}
+  \item[a.] $(5')$ What is the (Pearson) correlation coefficient between $X$ and $Y$ in the data set above? Show your calculations. What do you learn about the data set from the quantity? 
+
+  \item[b.] $(3')$ Based on the quantity and conclusion above, without actually applying PCA, can you guess if PCA may or may not help to reduce the data size? Explain your guess by the intuition of PCA.
+
+  \item[c.] $(6')$ What is the covariance matrix for the data set above? Show your calculation. \textit{Hint: It is easy to miss a few steps. Follow the steps described in the lecture slides.}
+  
+  \item[d.] $(6')$ How many principal components does the dataset have? What are they? What is the first principal component, i.e., the most important one? Show your calculation. \textit{Hint: You can use Matlab or similar software applications to find eigenvectors.}
+  
+  \item[e.] $(5')$ Scatterplot all the data points and draw the lines showing the directions of all the principal components. \textit{Hint: You may use Matlab or Excel to draw.}
+  
+  \item[f.] $(5')$ Suppose we only use the first principal component, i.e., the most important component, as the basis for the new space. Project the data points $A=(0.05, 0.45)$ and $B=(0.49, 0.69)$ to the new space. Show your calculation. Draw the projections on the figure in sub-question (e).
+  
+  %\controlprint{\bigv}
+
+\end{enumerate}
+\input{minimp1}
+\input{minimp2}
+
+\end{document}

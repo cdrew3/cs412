@@ -1,0 +1,64 @@
+\section*{Question 1 (15 points)}
+The dataset \texttt{data.online.scores} (in \texttt{data.zip}) provides the exam score records  for students who take online courses. These records are sampled from a general population. Data in each row are separated by tabs. The first column shows students' IDs. The second column is students' midterm scores and the third column is students' final scores.  Please give the following statistical descriptions of the \textbf{final scores}. If the result is not integer, then round it to 3 decimal places.\\
+
+\textbf{Purpose} 
+\begin{itemize}
+\item Have a better understanding of basic statistical descriptions of data.
+\end{itemize}
+
+\textbf{Requirements} 
+\begin{itemize}
+\item For sub-questions (a), (b) and (c), you should write scripts to calculate statistical descriptions. There is no restrictions on the language you use. You are not allowed to calculate using calculators or by hands. You are required to submit your source code for sub-questions (a), (b) and (c).
+\item For sub-question (d), you are required to answer the question in the PDF file you will submit.
+\end{itemize}
+\begin{itemize}
+ \item[a.] (6') First quantile $Q_1$, the median, and the third quantile $Q_3$.
+ \item[b.] (3') Mean.
+ \item[c.] (3') Mode.
+ \item[d.] (3') For the distribution of students' final scores, is the data positively skewed or negatively skewed? Explain why you could get your conclusion.
+ \end{itemize}
+ 
+
+\section*{Question 2 (15 points)}
+
+In the following questions, you are required to evaluate the similarity/dissimilarity among data samples. If the result is not integer, then round it to 3 decimal places.\\
+
+\textbf{Purpose} \begin{itemize}
+\item Have a better understanding of measuring data similarity and dissimilarity.
+\end{itemize} 
+\textbf{Requirements} 
+\begin{itemize}
+\item For sub-questions (a) and (b), you should write important steps and the result in the PDF file you will submit. Only giving a result will not get credits.
+\item For sub-question (c), you should explain clearly in the PDF file. \item For sub-question (d), you should write a script to calculate. There's no restrictions on the language you use. You are required to submit your source code for sub-question (d). 
+\end{itemize}
+ 
+ \begin{itemize}
+ \item[a.](3') Given two objects \textit{Obj1} and \textit{Obj2}, each of them has 200 binary attributes. Table \ref{contin} is the contingency table for these two objects. Each cell in the table shows the number of attributes where \textit{Obj 1} and \textit{Obj 2} have the corresponding combination of values. E,g., for cell \textit{Obj 1} = 1 and \textit{Obj2} = 0, there are 28 attributes with such a combination. Suppose  all the attributes are \textbf{asymmetric} binary attributes, you are required to calculate the Jaccard coefficient of \textit{Obj1} and \textit{Obj2}.
+
+\begin{table}[h]
+\centering
+
+\begin{tabular}{llll}
+                                                  & \multicolumn{3}{c}{{\it Obj 2}}                                             \\ \cline{2-4} 
+\multicolumn{1}{l|}{\multirow{3}{*}{{\it Obj 1}}} & \multicolumn{1}{l|}{}  & \multicolumn{1}{l|}{1}  & \multicolumn{1}{l|}{0}   \\ \cline{2-4} 
+\multicolumn{1}{l|}{}                             & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{21} & \multicolumn{1}{l|}{28}  \\ \cline{2-4} 
+\multicolumn{1}{l|}{}                             & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{39} & \multicolumn{1}{l|}{112} \\ \cline{2-4} 
+\end{tabular}
+\caption{Contingency Table for \textit{Obj1} and \textit{Obj 2}}
+\label{contin}
+\end{table}
+
+
+\item[b.](6') Given two points in the 3-D space, $A = (3,1,2)$ and $B = (-1,0,8)$. Please calculate the following distances between these two points.
+ \begin{itemize}
+ \item[1.] \textit{Euclidean} distance.
+ \item[2.] \textit{Manhattan} distance.
+ \item[3.]\textit{Minkowski} distance where $h = \infty$.
+ \end{itemize} 
+ \item[c.] (2') Suppose we have two random points $A$ and $B$ in space, explain why the \textit{Euclidean} distance between $A$ and $B$ is always shorter than (or equal to) the \textit{Manhattan} distance?
+ \item[d.] (4') Given the dataset \texttt{vectors.txt}, you will find two vectors ($A$ and $B$). Each vector has 100 attributes (separated by tabs). Calculate the following distance between these two vectors:
+  \begin{itemize}
+  \item[1.] \textit{Minkowski} distance where $h = 2$.
+  \item[2.] \textit{Minkowski} distance where $h = 3$.
+  \end{itemize}
+ \end{itemize}
