@@ -12,5 +12,9 @@ for i = 1:numel(x)
     yM(i) = (y(i) - yMean); % Zero Mean
 end
 
-xy = [xM; yM];
-xyCov = (1/(xNum-1))*xy*xy'
+xyM = [xM; yM];
+xyCov = (1/(xNum-1))*xyM*xyM';
+
+[e_vec,e_val] = eig(xyCov)
+eY = e_vect * xyM
+cY1 = (1/(xNum-1))*eY*eY'
