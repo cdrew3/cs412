@@ -40,7 +40,7 @@ def getData(theDataFile):
 	theData.sort()
 	return theData
 
-dataFile = "../data/data.online.scores"
+dataFile = "data/data.online.scores"
 finalScores = getData(dataFile)
 
 print("##### ##### 1A ##### #####")

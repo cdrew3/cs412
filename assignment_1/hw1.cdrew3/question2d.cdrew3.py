@@ -14,7 +14,7 @@ def minkDist(A, B, h):
 	
 	return innerTotal**(1/h)
 
-vectorFile = "../data/vectors.txt"
+vectorFile = "data/vectors.txt"
 A, B = getVectors(vectorFile)
 
 print("##### ##### 2d1 ##### #####")
